@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.learner.task02.data.model.User" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="10dp"
+        app:cardPreventCornerOverlap="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image_view"
+                setImageUrl="@{user}"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:padding="5dp"
+                android:src="@drawable/user_placeholder"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/name_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@{user.firstName+` `+user.lastName}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textColor="@color/user_name"
+                app:layout_constraintBottom_toTopOf="@id/mobile_text_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@id/profile_image_view"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="John Paul" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/mobile_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintVertical_chainStyle="packed"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="@{user.phones.mobile}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/user_number"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/profile_image_view"
+                app:layout_constraintTop_toBottomOf="@id/name_text_view"
+                tools:text="+10 225 3365" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

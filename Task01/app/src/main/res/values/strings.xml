@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Task-01</string>
+    <string name="download_the_video">Download The Video</string>
+    <string name="need_permission">Need Permission.</string>
+    <string name="need_permission_message">This app need to grant Storage permission to use this feature. You can grant in app settings.</string>
+    <string name="goto_settings">Goto Settings</string>
+    <string name="cancel">Cancel</string>
+    <string name="warning_for_need_permission">You need give permission for download the file</string>
+    <string name="notification_channel_id">task_one_channel_id</string>
+    <string name="notificaiton_channel_name">Interview task one notification channel</string>
+    <string name="notification_description">This channel is use for show download progress on notification</string>
+    <string name="download_complete">Download Complete</string>
+</resources>
